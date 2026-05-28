@@ -35,18 +35,20 @@ export default function Home({ setCurrentPage, setSelectedCarId }) {
   ];
 
   return (
-    <div className="space-y-24 pb-20">
+    <div className="space-y-24">
       {/* Cinematic Fullscreen Video Hero (Shot-by-Shot Telemetry Sequence) */}
       <VideoHero onExploreClick={handleExploreScroll} />
 
       {/* Cinematic Scroll Story Section */}
       <ScrollStorySection />
 
-      {/* Section 2: Combined Hero, Brands, & Featured Fleet */}
-      <section 
-        ref={mainHeroRef} 
-        className="relative min-h-screen py-24 flex flex-col justify-center items-center scroll-mt-20"
-      >
+      {/* Main Content Group with solid dark background wrapping the rest of Home page */}
+      <div className="bg-obsidian space-y-24 pb-20 relative z-10">
+        {/* Section 2: Combined Hero, Brands, & Featured Fleet */}
+        <section 
+          ref={mainHeroRef} 
+          className="relative min-h-screen py-24 flex flex-col justify-center items-center scroll-mt-20"
+        >
         {/* Outer Scrolling Wrapper container for all sections inside */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
           
@@ -257,6 +259,7 @@ export default function Home({ setCurrentPage, setSelectedCarId }) {
           ))}
         </div>
       </section>
+      </div>
     </div>
   );
 }
