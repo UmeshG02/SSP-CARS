@@ -3,6 +3,7 @@ import { Search, Star, ChevronRight, Fuel, Gauge, Zap, TrendingUp } from 'lucide
 import { carsData } from '../data/cars';
 import LoanCalculator from '../components/LoanCalculator';
 import VideoHero from '../components/VideoHero';
+import ScrollStorySection from '../components/ScrollStorySection';
 
 export default function Home({ setCurrentPage, setSelectedCarId }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -37,6 +38,9 @@ export default function Home({ setCurrentPage, setSelectedCarId }) {
     <div className="space-y-24 pb-20">
       {/* Cinematic Fullscreen Video Hero (Shot-by-Shot Telemetry Sequence) */}
       <VideoHero onExploreClick={handleExploreScroll} />
+
+      {/* Cinematic Scroll Story Section */}
+      <ScrollStorySection />
 
       {/* Section 2: Combined Hero, Brands, & Featured Fleet */}
       <section 
